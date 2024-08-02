@@ -14,75 +14,40 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation('org.springframework.boot:spring-boot-starter-test')
 
-    // <dependencies>
-    //     <dependency>
-    //         <groupId>org.springframework.boot</groupId>
-    //         <artifactId>spring-boot-starter-actuator</artifactId>
-    //     </dependency>
-    //     <dependency>
-    //         <groupId>org.springframework.boot</groupId>
-    //         <artifactId>spring-boot-starter-thymeleaf</artifactId>
-    //     </dependency>
-    //     <dependency>
-    //         <groupId>org.springframework.boot</groupId>
-    //         <artifactId>spring-boot-starter-web</artifactId>
-    //     </dependency>
-    //     <dependency>
+	// implementation 'org.springframework.boot:'
+
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-configuration-processor'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // NOTE - wtf is runtime scope and optional aboot
+	implementation 'org.springframework.boot:spring-boot-devtools'
+    //         <scope>runtime</scope>
+    //         <optional>true</optional>
+
     //         <groupId>io.micrometer</groupId>
-    //         <artifactId>micrometer-registry-prometheus</artifactId>
+	implementation 'io.micrometer:micrometer-registry-prometheus'
     //         <scope>runtime</scope>
-    //     </dependency>
 
-    //     <dependency>
-    //         <groupId>org.springframework.boot</groupId>
-    //         <artifactId>spring-boot-devtools</artifactId>
-    //         <scope>runtime</scope>
-    //         <optional>true</optional>
-    //     </dependency>
-    //     <dependency>
     //         <groupId>com.h2database</groupId>
-    //         <artifactId>h2</artifactId>
+	implementation 'com.h2database:h2'
     //         <scope>runtime</scope>
-    //     </dependency>
-    //     <dependency>
-    //         <groupId>org.springframework.boot</groupId>
-    //         <artifactId>spring-boot-starter-data-jpa</artifactId>
-    //     </dependency>
-    //     <dependency>
-    //         <groupId>org.springframework.boot</groupId>
-    //         <artifactId>spring-boot-configuration-processor</artifactId>
-    //     </dependency>
-    //     <dependency>
+
     //         <groupId>org.projectlombok</groupId>
-    //         <artifactId>lombok</artifactId>
+	implementation 'org.projectlombok:lombok'
     //         <optional>true</optional>
-    //     </dependency>
-    //     <dependency>
+
     //         <groupId>com.fasterxml.jackson.core</groupId>
-    //         <artifactId>jackson-databind</artifactId>
-    //     </dependency>
-    //     <dependency>
-    //         <groupId>org.springframework.boot</groupId>
-    //         <artifactId>spring-boot-starter-test</artifactId>
-    //         <scope>test</scope>
-    //     </dependency>
-    //     <dependency>
-    //         <groupId>org.springframework.restdocs</groupId>
-    //         <artifactId>spring-restdocs-mockmvc</artifactId>
-    //         <scope>test</scope>
-    //     </dependency>
-    //     <dependency>
-    //         <groupId>org.jetbrains</groupId>
-    //         <artifactId>annotations</artifactId>
-    //         <version>RELEASE</version>
-    //         <scope>compile</scope>
-    //     </dependency>
-    //     <dependency>
-    //         <groupId>org.springframework.boot</groupId>
-    //         <artifactId>spring-boot-starter-validation</artifactId>
-    //     </dependency>
+	implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
+    // NOTE - do we need a special target or config for this to generate rest docs
+	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+
 }
 
 test {
