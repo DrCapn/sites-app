@@ -1,4 +1,4 @@
-package com.example.sites.config;
+package com.rspell.sites.config;
 
 import lombok.Getter;
 import lombok.Setter;

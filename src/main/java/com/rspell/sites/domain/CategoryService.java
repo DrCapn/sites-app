@@ -1,8 +1,8 @@
-package com.example.sites.domain;
+package com.rspell.sites.domain;
 
-import com.example.sites.measure.MetricCollector;
-import com.example.sites.repo.CategoryTimesRepository;
-import com.example.sites.repo.InstanceCategoryTimes;
+import com.rspell.sites.measure.MetricCollector;
+import com.rspell.sites.repo.CategoryTimesRepository;
+import com.rspell.sites.repo.InstanceCategoryTimes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

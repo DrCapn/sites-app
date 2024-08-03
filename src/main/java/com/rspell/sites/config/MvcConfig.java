@@ -1,6 +1,6 @@
-package com.example.sites.config;
+package com.rspell.sites.config;
 
-import com.example.sites.SessionRecorderInterceptor;
+import com.rspell.sites.SessionRecorderInterceptor;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import javax.validation.constraints.NotNull;
 
 @Configuration
-@ComponentScan("com.example.sites")
+@ComponentScan("com.rspell.sites")
 public class MvcConfig implements WebMvcConfigurer {
 
     // TODO ? not sure this is needed

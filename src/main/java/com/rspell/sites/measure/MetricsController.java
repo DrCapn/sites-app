@@ -1,8 +1,8 @@
-package com.example.sites.measure;
+package com.rspell.sites.measure;
 
-import com.example.sites.domain.CategoryService;
-import com.example.sites.domain.SiteInstance;
-import com.example.sites.domain.SitesService;
+import com.rspell.sites.domain.CategoryService;
+import com.rspell.sites.domain.SiteInstance;
+import com.rspell.sites.domain.SitesService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

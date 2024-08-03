@@ -1,4 +1,4 @@
-package com.example.sites.util;
+package com.rspell.sites.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;

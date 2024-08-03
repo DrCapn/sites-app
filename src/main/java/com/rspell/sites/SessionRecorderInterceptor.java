@@ -1,4 +1,4 @@
-package com.example.sites;
+package com.rspell.sites;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;

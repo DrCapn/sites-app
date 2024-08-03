@@ -1,4 +1,4 @@
-package com.example.sites.measure;
+package com.rspell.sites.measure;
 
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;

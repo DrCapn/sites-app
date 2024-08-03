@@ -1,4 +1,4 @@
-package com.example.sites.measure;
+package com.rspell.sites.measure;
 
 public enum Metric {
 

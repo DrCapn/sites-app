@@ -1,4 +1,4 @@
-package com.example.sites.repo;
+package com.rspell.sites.repo;
 
 import org.springframework.data.repository.CrudRepository;
 

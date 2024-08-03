@@ -1,7 +1,7 @@
-package com.example.sites.domain;
+package com.rspell.sites.domain;
 
-import com.example.sites.config.SitesAppConfig;
-import com.example.sites.measure.MetricCollector;
+import com.rspell.sites.config.SitesAppConfig;
+import com.rspell.sites.measure.MetricCollector;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

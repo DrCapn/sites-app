@@ -1,10 +1,10 @@
-package com.example.sites.domain;
+package com.rspell.sites.domain;
 
-import com.example.sites.measure.MetricCollector;
-import com.example.sites.measure.SessionService;
-import com.example.sites.repo.InstanceCategoryTimes;
-import com.example.sites.repo.SessionInfo;
-import com.example.sites.util.Utils;
+import com.rspell.sites.measure.MetricCollector;
+import com.rspell.sites.measure.SessionService;
+import com.rspell.sites.repo.InstanceCategoryTimes;
+import com.rspell.sites.repo.SessionInfo;
+import com.rspell.sites.util.Utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

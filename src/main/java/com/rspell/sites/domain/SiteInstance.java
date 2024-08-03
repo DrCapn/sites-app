@@ -1,4 +1,4 @@
-package com.example.sites.domain;
+package com.rspell.sites.domain;
 
 import lombok.Builder;
 import lombok.Getter;

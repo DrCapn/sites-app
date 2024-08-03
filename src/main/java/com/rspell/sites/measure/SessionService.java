@@ -1,9 +1,9 @@
-package com.example.sites.measure;
+package com.rspell.sites.measure;
 
-import com.example.sites.domain.CategoryService;
-import com.example.sites.repo.SessionInfo;
-import com.example.sites.repo.SessionRepository;
-import com.example.sites.util.Utils;
+import com.rspell.sites.domain.CategoryService;
+import com.rspell.sites.repo.SessionInfo;
+import com.rspell.sites.repo.SessionRepository;
+import com.rspell.sites.util.Utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

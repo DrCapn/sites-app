@@ -1,4 +1,4 @@
-package com.example.sites.config;
+package com.rspell.sites.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

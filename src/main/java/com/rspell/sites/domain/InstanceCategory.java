@@ -1,4 +1,4 @@
-package com.example.sites.domain;
+package com.rspell.sites.domain;
 
 import lombok.Value;
 import lombok.experimental.NonFinal;
@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.*;
 
-import static com.example.sites.domain.SitesService.*;
+import static com.rspell.sites.domain.SitesService.*;
 
 @Value
 public class InstanceCategory {
