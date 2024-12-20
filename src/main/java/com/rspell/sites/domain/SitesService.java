@@ -33,7 +33,7 @@ public class SitesService {
     private Map<String, List<SiteInstance>> siteToInstances;
 
     // TODO remove or make better
-    private static StringBuffer ERRORS = new StringBuffer();
+    private final static StringBuffer ERRORS = new StringBuffer();
 
     public SitesService(final SitesAppConfig appConfig,
                         final ObjectMapper objectMapper,
@@ -45,12 +45,13 @@ public class SitesService {
         this.metricCollector = metricCollector;
 
         try {
-            siteToInstances = loadSites();
+            siteToInstances = initSiteToInstances(siteToInstances);
+            loadSites(siteToInstances);
         } catch (IOException e) {
             StringWriter sw = new StringWriter();
             PrintWriter pw = new PrintWriter(sw);
             e.printStackTrace(pw);
-            ERRORS.append(":: " + sw);
+            ERRORS.append(":: ").append(sw);
             log.error("Cannot load sites config", e);
         }
     }
@@ -150,7 +151,7 @@ public class SitesService {
         return String.format(DIR_TEMPLATE, appConfig.getSitesLocation(), appConfig.getSitesTemplates());
     }
 
-    private Map<String, List<SiteInstance>> loadSites() throws IOException {
+    private void loadSites(Map<String, List<SiteInstance>> newSiteToInstances) throws IOException {
         final String siteLoc = appConfig.getSitesLocation();
         // File sitesFile = appContext.getResource(siteLoc + "/sitesConfig.json").getFile();
         InputStream sitesFile =
@@ -162,11 +163,11 @@ public class SitesService {
         Map<String, List<SiteInstance>> sitesToInstances =
                 new LinkedHashMap<>(sitesConfig.getSites().size());
 
-        // for each site, reaqd templat files and create category names
+        // for each site, read template files and create category names
         for(SiteDefinition site : sitesConfig.getSites()) {
             String siteNameTemplateDir = siteTemplates() + site.getSiteName();
             List<SiteInstance> siteInstances = new LinkedList<>();
-            siteToInstances.put(site.getSiteName(), siteInstances);
+            newSiteToInstances.put(site.getSiteName(), siteInstances);
 
             for (String instanceName : site.getSiteInstances()) {
                 SiteInstance siteInstance = new SiteInstance(
@@ -178,8 +179,21 @@ public class SitesService {
                 processSiteResources(instanceName, siteInstance, instNameDir);
             }
         }
+    }
 
-        return sitesToInstances;
+    private Map<String, List<SiteInstance>> initSiteToInstances(
+            final Map<String, List<SiteInstance>> oldSiteToInstances) {
+        // Clear out the old mapping and return a new one
+        log.info("Clearing the in memory sites");
+        // TODO - how this gets cleared in java may impact performance
+        //      do we need to save/persist the old set? debug option (not avail while perf test)
+        //      Possibly create perf test that rigorously sets new site instances
+        //      (lots there, lots to clear, also what if adding and clearing? race? is that possible?
+
+        // TODO - double check the clear() process here
+        // TODO - ? grab the old size, but is it worth it.
+        Optional.ofNullable(oldSiteToInstances).ifPresent(Map::clear);
+        return new HashMap<>(10);
     }
 
     private void processSiteResources(String instanceName, SiteInstance siteInstance, String instNameDir) throws IOException {

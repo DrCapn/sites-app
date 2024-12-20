@@ -1,11 +1,13 @@
 {
   "sites": [
     {
-//      siteName
-//      siteInstances
-//      metrics [], allowClear, persistMetrics, version
-
+      "siteName": "",
+      "siteInstances": [],
+      "metrics": [],
+      "allowClear":  false,
+      "persistMetrics": true,
+      "version": "ver 1.0"
     }
   ],
-//  version
+  "version": "1.trillion-abz"
 }
